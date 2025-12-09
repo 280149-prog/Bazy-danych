@@ -1,0 +1,86 @@
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.so
+
+# Pliki logów
+*.log
+
+# Tymczasowe pliki
+*.tmp
+*.temp
+
+# --- FLASK / APP ---
+instance/
+.env
+*.env
+.env.*
+# Pliki konfiguracyjne środowiska
+config/*.ini
+config/*.cfg
+
+# --- VIRTUALENV ---
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- TESTS ---
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+.tox/
+nose2-*/
+
+# --- PACKAGING ---
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+.venv/lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+*.egg
+
+# --- EDITORS & IDE ---
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+.history/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- DOCKER ---
+docker-compose.override.yml
+*.pid
+
+# --- PYPROJECT / POETRY ---
+poetry.lock
+poetry.toml
+
+# --- MYPY ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# --- OTHER ---
+*.sqlite3
+*.db

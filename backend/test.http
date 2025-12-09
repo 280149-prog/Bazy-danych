@@ -1,0 +1,7 @@
+POST http://127.0.0.1:7000/auth/login
+Content-Type: application/json
+
+{
+  "login": "test",
+  "password": "123"
+}
