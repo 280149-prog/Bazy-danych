@@ -10,6 +10,7 @@ from backend.database.models.czesci import Czesc
 from backend.database.models.czesci_wykorzystane import CzescWykorzystana
 from backend.database.models.zamowienia_czesci import ZamowienieCzesci
 from backend.database.models.pozycje_zamowienia import PozycjaZamowienia
+from backend.routes.users import users_bp
 
 
 def create_app():
@@ -20,6 +21,9 @@ def create_app():
 
     # Rejestracja blueprintów
     app.register_blueprint(auth_bp, url_prefix="/auth")
+    app.register_blueprint(users_bp, url_prefix="/users")
+
+    print("🔍 DATABASE:", app.config["SQLALCHEMY_DATABASE_URI"])
 
     return app
 

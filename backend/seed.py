@@ -12,10 +12,10 @@ with app.app_context():
 
         admin = Uzytkownik(
             login="admin",
-            haslo="admin123",  # później będzie hashing
             rola="admin",
             aktywny=True
         )
+        admin.set_password("admin123")
 
         db.session.add(admin)
         db.session.commit()

@@ -1,7 +1,8 @@
-POST http://127.0.0.1:7000/auth/login
+POST http://127.0.0.1:5000/auth/login
 Content-Type: application/json
+#Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NjU0MjA0NjV9.3J2hfnb3DuPJ7pGimbp_1KrzBaPcpCjBXN60Ug1Brbo
 
 {
-  "login": "test",
-  "password": "123"
+  "login": "janek2",
+  "password": "haslo"
 }

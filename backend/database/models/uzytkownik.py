@@ -1,5 +1,6 @@
 from backend.database.connection import db
 from datetime import datetime
+import bcrypt
 
 class Uzytkownik(db.Model):
     __tablename__ = "uzytkownicy"
@@ -10,6 +11,12 @@ class Uzytkownik(db.Model):
     rola = db.Column(db.Enum("admin", "kierownik", "pracownik"), nullable=False)
     aktywny = db.Column(db.Boolean, default=True)
     data_utworzenia = db.Column(db.DateTime, default=datetime.now)
+
+    def set_password(self, password: str):
+        self.haslo = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
+
+    def check_password(self, password: str) -> bool:
+        return bcrypt.checkpw(password.encode("utf-8"), self.haslo.encode("utf-8"))
 
     dane_kadrowe = db.relationship("DaneKadrowe", back_populates="uzytkownik", uselist=False)
     zlecenia = db.relationship("ZlecenieNaprawy", back_populates="pracownik")
